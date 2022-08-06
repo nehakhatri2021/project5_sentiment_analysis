@@ -1,4 +1,3 @@
-
 import streamlit as st 
 from PIL import Image
 import pickle
@@ -11,7 +10,7 @@ model = pickle.load(open('model.pkl','rb'))
 
 
 def review(text):
-  dataset = pd.read_csv('NLP dataset 1.csv', delimiter="\t", quoting=3)
+  dataset = pd.read_csv('NLP.csv')
   # First step: cleaning Text and removing number and punctuation marks.
   # Cleaning the texts for all review using for loop
   import re
