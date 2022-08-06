@@ -10,7 +10,7 @@ model = pickle.load(open('model_a.pkl','rb'))
 from sklearn.feature_extraction.text import CountVectorizer
 cv = CountVectorizer(max_features = 2000)
 print(cv)
-corpus=pd.read_csv('NLP.csv')
+corpus=pd.read_csv('corpus_data.csv')
 corpus1=corpus['corpus'].tolist()
 X = cv.fit_transform(corpus1).toarray()
 #run_with_ngrok(app)
