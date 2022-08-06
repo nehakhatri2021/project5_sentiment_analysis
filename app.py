@@ -6,7 +6,7 @@ import pickle
 
 
 app = Flask(__name__)
-model = pickle.load(open('model_a.pkl','rb'))
+model = pickle.load(open('analysis_model.pkl','rb'))
 from sklearn.feature_extraction.text import CountVectorizer
 cv = CountVectorizer(max_features = 2000)
 print(cv)
