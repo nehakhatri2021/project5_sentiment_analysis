@@ -7,11 +7,11 @@ import matplotlib.pyplot as plt
 import pandas as pd
 st.set_option('deprecation.showfileUploaderEncoding', False)
 # Load the pickled model
-model = pickle.load(open('restuarantreviewnlp_main.pkl','rb'))   
+model = pickle.load(open('model.pkl','rb'))   
 
 
 def review(text):
-  dataset = pd.read_csv('Restaurant_Reviews.tsv', delimiter="\t", quoting=3)
+  dataset = pd.read_csv('NLP dataset 1.csv', delimiter="\t", quoting=3)
   # First step: cleaning Text and removing number and punctuation marks.
   # Cleaning the texts for all review using for loop
   import re
@@ -71,7 +71,7 @@ def review(text):
     
   return result
 html_temp = """
-   <div class="" style="background-color:Coral;" >
+   <div class="" style="background-color:salmon;" >
    <div class="clearfix">           
    <div class="col-md-12">
    <center><p style="font-size:40px;color:white;margin-top:10px;">Poornima Institute of Engineering & Technology</p></center> 
@@ -82,10 +82,10 @@ html_temp = """
    </div>
    """
 st.markdown(html_temp,unsafe_allow_html=True)
-st.header("Restaurant Review Analysis ")
+st.header("Sentiment Analysis ")
   
   
-text = st.text_area("Writre Review of Restaurant")
+text = st.text_area("Writre Reviews")
 
 if st.button("Review Analysis"):
   result=review(text)
