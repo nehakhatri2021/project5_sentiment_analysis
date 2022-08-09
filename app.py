@@ -5,7 +5,7 @@ from flask import Flask, request, jsonify, render_template
 import pickle
 
 app = Flask(__name__)
-model = pickle.load(open('NLP_project_5_main.pkl','rb')) 
+model = pickle.load(open('NLP_Project5.pkl','rb')) 
 from sklearn.feature_extraction.text import CountVectorizer
 cv = CountVectorizer(max_features = 1500)
 print(cv)
